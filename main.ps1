@@ -25,7 +25,8 @@ try {
         "gui.ps1",
         "modules/DotfilesInstaller.psm1",
         "installs/Neovim.ps1",
-        "installs/Git.ps1"
+        "installs/Git.ps1",
+        "installs/WezTerm.ps1"
     ) | ForEach-Object {
         [PSCustomObject]@{
             Name = $_
@@ -57,6 +58,7 @@ try {
 
     Get-WebFiles -Files $fileManifest -BasePath $basePath
 
+    #$guiPath = Join-Path $PSScriptRoot "gui.ps1"
     $guiPath = Join-Path $basePath "gui.ps1"
     if (-not (Test-Path $guiPath -PathType Leaf)) {
         throw "Critical error: GUI script missing at $guiPath"
