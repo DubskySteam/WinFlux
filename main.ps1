@@ -26,7 +26,8 @@ try {
         "modules/DotfilesInstaller.psm1",
         "installs/Neovim.ps1",
         "installs/Git.ps1",
-        "installs/WezTerm.ps1"
+        "installs/WezTerm.ps1",
+        "installs/Powershell7.ps1"
     ) | ForEach-Object {
         [PSCustomObject]@{
             Name = $_
