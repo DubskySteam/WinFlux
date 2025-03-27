@@ -14,7 +14,7 @@
 Import-Module "$PSScriptRoot/../modules/DotfilesInstaller.psm1" -Force
 
 if (-not (Get-Command nvim -ErrorAction SilentlyContinue)) {
-        winget install -e --id Git.Git --silent
+    winget install -e --id Git.Git --silent --accept-source-agreements
 }
 
 Install-Dotfiles -GitHubUser "DubskySteam" `

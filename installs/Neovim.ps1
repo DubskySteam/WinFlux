@@ -14,7 +14,7 @@ https://github.com/dubskysteam/WinFlux
 Import-Module "$PSScriptRoot/../modules/DotfilesInstaller.psm1" -Force
 
 if (-not (Get-Command nvim -ErrorAction SilentlyContinue)) {
-    winget install Neovim.Neovim --accept-source-agreements
+    winget install -e --id Neovim.Neovim --silent --accept-source-agreements
 }
 
 Install-Dotfiles -GitHubUser "DubskySteam" `

@@ -14,7 +14,7 @@ https://github.com/dubskysteam/WinFlux
 Import-Module "$PSScriptRoot/../modules/DotfilesInstaller.psm1" -Force
 
 if (-not (Get-Command wezterm -ErrorAction SilentlyContinue)) {
-    winget install --id=wez.wezterm --silent --accept-source-agreements
+    winget install -e --id wez.wezterm --accept-source-agreements
 }
 
 Install-Dotfiles -GitHubUser "DubskySteam" `
