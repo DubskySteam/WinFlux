@@ -17,6 +17,7 @@ try {
     $basePath = "$env:TEMP\WinFlux-$(Get-Date -Format 'yyyyMMddHHmmss')"
     $null = New-Item -Path $basePath -ItemType Directory -Force -ErrorAction Stop
     Write-Host "🔧 Web install directory: $basePath" -ForegroundColor Cyan
+    $repoUrl ="https://raw.githubusercontent.com/DubskySteam/WinFlux/main"
 
     $fileManifest = @(
         @{
@@ -26,6 +27,10 @@ try {
         @{
             Name = "installs/Neovim.ps1"
             Url  = "https://raw.githubusercontent.com/DubskySteam/WinFlux/main/installs/Neovim.ps1"
+        },
+        @{
+            Name = "installs/Git.ps1"
+            Url  = "https://raw.githubusercontent.com/DubskySteam/WinFlux/main/installs/Git.ps1"
         }
     )
 
