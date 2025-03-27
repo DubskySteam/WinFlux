@@ -19,6 +19,6 @@ if (-not (Get-Command nvim -ErrorAction SilentlyContinue)) {
 
 Install-Dotfiles -GitHubUser "DubskySteam" `
                  -RepoName ".dotfiles" `
-                 -SourcePath "git/.gitconfig" `
+                 -SourcePath "win/git/.gitconfig" `
                  -LocalPath "$HOME" `
                  -CleanBeforeInstall
