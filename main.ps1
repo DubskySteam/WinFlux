@@ -7,32 +7,31 @@
     Dubsky
 .REPOSITORY
     https://github.com/dubskysteam/WinFlux
-.VERSION
-    1.1.0
 #>
 
 param([switch]$NoCleanup)
 
 try {
+    $REPO_OWNER = "DubskySteam"
+    $REPO_NAME = "WinFlux"
+    $REPO_BRANCH = "main"
+    $BASE_REPO_URL = "https://raw.githubusercontent.com/$REPO_OWNER/$REPO_NAME/$REPO_BRANCH"
+
     $basePath = "$env:TEMP\WinFlux-$(Get-Date -Format 'yyyyMMddHHmmss')"
     $null = New-Item -Path $basePath -ItemType Directory -Force -ErrorAction Stop
     Write-Host "🔧 Web install directory: $basePath" -ForegroundColor Cyan
-    $repoUrl ="https://raw.githubusercontent.com/DubskySteam/WinFlux/main"
 
     $fileManifest = @(
-        @{
-            Name = "gui.ps1"
-            Url  = "https://raw.githubusercontent.com/DubskySteam/WinFlux/main/gui.ps1"
-        },
-        @{
-            Name = "installs/Neovim.ps1"
-            Url  = "https://raw.githubusercontent.com/DubskySteam/WinFlux/main/installs/Neovim.ps1"
-        },
-        @{
-            Name = "installs/Git.ps1"
-            Url  = "https://raw.githubusercontent.com/DubskySteam/WinFlux/main/installs/Git.ps1"
+        "gui.ps1",
+        "modules/DotfilesInstaller.psm1",
+        "installs/Neovim.ps1",
+        "installs/Git.ps1"
+    ) | ForEach-Object {
+        [PSCustomObject]@{
+            Name = $_
+            Url  = "$BASE_REPO_URL/$_"
         }
-    )
+    }
 
     function Get-WebFiles {
         param($Files, $BasePath)
@@ -51,7 +50,6 @@ try {
                 Invoke-WebRequest -Uri $_.Url -OutFile $dest -ErrorAction Stop
             }
             catch {
-                Write-Host " [❌]" -ForegroundColor Red
                 throw "Failed to download $($_.Name): $_"
             }
         } -ThrottleLimit 4
