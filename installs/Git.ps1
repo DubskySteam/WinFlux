@@ -11,16 +11,14 @@
     1.0.0
 #>
 
-try {
-    if (-not (Get-Command nvim -ErrorAction SilentlyContinue)) {
+Import-Module "$PSScriptRoot/../modules/DotfilesInstaller.psm1" -Force
+
+if (-not (Get-Command nvim -ErrorAction SilentlyContinue)) {
         winget install -e --id Git.Git --silent
-        Write-Output "Git installed successfully"
-    } else {
-        Write-Output "Git already installed"
-    }
-    <#Wait 2seconds#>
-    Start-Sleep -Seconds 2
 }
-catch {
-    throw "Git installation failed: $_"
-}
+
+Install-Dotfiles -GitHubUser "DubskySteam" `
+                 -RepoName ".dotfiles" `
+                 -SourcePath "git/.gitconfig" `
+                 -LocalPath "$HOME" `
+                 -CleanBeforeInstall
