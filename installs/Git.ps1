@@ -13,7 +13,7 @@
 
 Import-Module "$PSScriptRoot/../modules/DotfilesInstaller.psm1" -Force
 
-if (-not (Get-Command nvim -ErrorAction SilentlyContinue)) {
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
     winget install -e --id Git.Git --silent --accept-source-agreements
 }
 
