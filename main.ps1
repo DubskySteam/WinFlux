@@ -32,6 +32,7 @@ try {
         "installs/FNM.ps1",
         "installs/Posh.ps1",
         "installs/RipGrep.ps1",
+        "installs/Zoxide.ps1",
         "installs/Eza.ps1"
     ) | ForEach-Object {
         [PSCustomObject]@{
