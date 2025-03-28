@@ -27,7 +27,12 @@ try {
         "installs/Neovim.ps1",
         "installs/Git.ps1",
         "installs/WezTerm.ps1",
-        "installs/Powershell7.ps1"
+        "installs/Powershell7.ps1",
+        "installs/FZF.ps1",
+        "installs/FNM.ps1",
+        "installs/Posh.ps1",
+        "installs/RipGrep.ps1",
+        "installs/Eza.ps1"
     ) | ForEach-Object {
         [PSCustomObject]@{
             Name = $_
@@ -59,7 +64,7 @@ try {
 
     Get-WebFiles -Files $fileManifest -BasePath $basePath
 
-    #$guiPath = Join-Path $PSScriptRoot "gui.ps1"
+    #$guiPath = Join-Path $PSScriptRoot "Gui.ps1"
     $guiPath = Join-Path $basePath "gui.ps1"
     if (-not (Test-Path $guiPath -PathType Leaf)) {
         throw "Critical error: GUI script missing at $guiPath"
