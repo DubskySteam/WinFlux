@@ -14,5 +14,5 @@
 Import-Module "$PSScriptRoot/../modules/DotfilesInstaller.psm1" -Force
 
 if (-not (Get-Command fzf -ErrorAction SilentlyContinue)) {
-    winget install -e --id Schniz.fnm --silent --accept-source-agreements
+    winget install -e --id junegun.fzf --silent --accept-source-agreements
 }
