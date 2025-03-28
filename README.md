@@ -3,7 +3,7 @@
     <h1 style="margin: 0;">WinFlux</h1>
 </div>
 
-#### Reference screenshots and videos at the bottom
+![](docs/ref1.png)
 
 ## Installation  | How to use
 **Open Windows Terminal and run**:
@@ -46,5 +46,3 @@ irm https://raw.githubusercontent.com/DubskySteam/WinFlux/main/main.ps1 | iex
 ├── installs/      # Installation & setup scripts
 └── tweaks/        # System tweaks of all sorts
 ```
-## Reference
-![](docs/ref1.png)
