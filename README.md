@@ -3,20 +3,12 @@
     <h1 style="margin: 0;">WinFlux</h1>
 </div>
 
+#### Reference screenshots and videos at the bottom
 
-### Reference screenshots and videos at the bottom
-
-## Installation
-WEB INSTALL (**fastest**):
+## Installation  | How to use
+**Open Windows Terminal and run**:
 ```powershell
 irm https://raw.githubusercontent.com/DubskySteam/WinFlux/main/main.ps1 | iex
-```
-
-LOCAL INSTALL:
-```
-git clone https://github.com/DubskySteam/WinFlux.git
-cd WinFlux
-.\main.ps1
 ```
 
 ## Included dotfiles & enhancements
@@ -25,14 +17,25 @@ cd WinFlux
 - Git
 - Neovim
 - VSCode
+- WezTerm
+- Powershell 7
 - Zen Browser
-- Glaze Window Manager
+- GlazeWM
 - Zebar
+```
+[Tools]
+```
+- FNM (Fast Node Manager)
+- FZF (Fuzzy Finder)
+- Zoxide (CD replacement)
+- Oh-Py-Posh (Terminal theming)
+- RipGrep
+- Eza (ls replacement)
 ```
 [Tweaks]
 ```
-- Performance mode
-- Disables Telemetry
+- Powerplan: Ultimate
+- Disable Telemetry
 ```
 
 ## Project Structure
